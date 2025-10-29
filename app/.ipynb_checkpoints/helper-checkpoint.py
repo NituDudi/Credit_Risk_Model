@@ -16,7 +16,7 @@ cols_to_scale = model_data['cols_to_scale']
 
 
 def prepare_input(age, income, loan_amount, loan_tenure_months, avg_dpd_per_delinquency,
-                   delinquency_ratio, credit_utilization_ratio, num_open_accounts, residence_type,
+                    delinquency_ratio, credit_utilization_ratio, num_open_accounts, residence_type,
                     loan_purpose, loan_type):
     # Create a dictionary with input values and dummy values for missing features
     input_data = {
@@ -25,7 +25,7 @@ def prepare_input(age, income, loan_amount, loan_tenure_months, avg_dpd_per_deli
         'number_of_open_accounts': num_open_accounts,
         'credit_utilization_ratio': credit_utilization_ratio,
         'loan_to_income': loan_amount / income if income > 0 else 0,
-        'delinquent_months to total_loan_months': delinquency_ratio,
+        'delinquency_ratio': delinquency_ratio,
         'avg_dpd_per_delinquency': avg_dpd_per_delinquency,
         'residence_type_Owned': 1 if residence_type == 'Owned' else 0,
         'residence_type_Rented': 1 if residence_type == 'Rented' else 0,
